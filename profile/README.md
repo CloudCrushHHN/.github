@@ -72,6 +72,6 @@ The CloudCrushHHN ecosystem is organized into three main repositories to ensure 
 
 | Repository | Technology | Description | Documentation |
 | :--- | :--- | :--- | :--- |
-| **`cloudcrush-core`** | Terraform / AWS Lambda | The engine of the platform. This monorepo contains the complete Infrastructure as Code (IaC) alongside the source code for all backend microservices. | [View README](https://github.com/your-org/cloudcrush-core/blob/main/README.md) |
-| **`cloudcrush-web-client`** | React / PWA | The student-facing frontend. A Mobile-First Progressive Web App (PWA) that acts as the primary dating and swiping interface. | [View README](https://github.com/your-org/cloudcrush-web-client/blob/main/README.md) |
-| **`cloudcrush-web-admin`** | React | The internal administration frontend. A dashboard for admins to monitor platform metrics and health, secured via Cognito. | [View README](https://github.com/your-org/cloudcrush-web-admin/blob/main/README.md) |
+| **`cloudcrush-core`** | Terraform / AWS Lambda | The engine of the platform. This monorepo contains the complete Infrastructure as Code (IaC) alongside the source code for all backend microservices. | [View README](https://github.com/CloudCrushHHN/cloudcrush-core/blob/main/README.md) |
+| **`cloudcrush-web-client`** | React / PWA | The student-facing frontend. A Mobile-First Progressive Web App (PWA) that acts as the primary dating and swiping interface. | [View README](https://github.com/CloudCrushHHN/cloudcrush-web-client/blob/main/README.md) |
+| **`cloudcrush-web-admin`** | React | The internal administration frontend. A dashboard for admins to monitor platform metrics and health, secured via Cognito. | [View README](https://github.com/CloudCrushHHN/cloudcrush-web-admin/blob/main/README.md) |
