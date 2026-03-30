@@ -1,4 +1,4 @@
-# 💘 CloudCrushHHN - Cloud Computing Competition (CCC’26)
+# 💘 CloudCrushHHN
 
 **CloudCrushHHN** is the exclusive dating and networking app for students of Heilbronn University (HHN). Our goal: Bringing students together across different study programs, whether for a date in the campus cafeteria or a shared late-night study session in the LIV library.
 
@@ -66,12 +66,12 @@ graph TD
     end
 ```
 
-# 📂 Repository Structure
+## 📂 Repository Structure & Modules
 
-To adhere to the Separation of Concerns principle and keep our deployments clean, the CloudCrushHHN ecosystem is divided into three distinct repositories:
+The CloudCrushHHN ecosystem is organized into three main repositories to ensure a clean separation of concerns. Please refer to their specific READMEs for detailed technical documentation and local setup instructions.
 
-* `cloudcrush-core`: The engine of the platform. This monorepo contains our complete Infrastructure as Code (Terraform) alongside the source code for all our AWS Lambda backend microservices.
-
-* `cloudcrush-web-client`: The Mobile-First React Progressive Web App (PWA) that acts as the primary dating interface for the students.
-
-* `cloudcrush-web-admin`: The internal React dashboard for administrators to monitor platform metrics, secured via Cognito admin roles.
+| Repository | Technology | Description | Documentation |
+| :--- | :--- | :--- | :--- |
+| **`cloudcrush-core`** | Terraform / AWS Lambda | The engine of the platform. This monorepo contains the complete Infrastructure as Code (IaC) alongside the source code for all backend microservices. | [View README](https://github.com/your-org/cloudcrush-core/blob/main/README.md) |
+| **`cloudcrush-web-client`** | React / PWA | The student-facing frontend. A Mobile-First Progressive Web App (PWA) that acts as the primary dating and swiping interface. | [View README](https://github.com/your-org/cloudcrush-web-client/blob/main/README.md) |
+| **`cloudcrush-web-admin`** | React | The internal administration frontend. A dashboard for admins to monitor platform metrics and health, secured via Cognito. | [View README](https://github.com/your-org/cloudcrush-web-admin/blob/main/README.md) |
