@@ -1,15 +1,16 @@
-# CloudCrushHHN - Dating App for Heilbronn University 💘
+# CloudCrushHHN - Dating App for Heilbronn University
 
 **CloudCrushHHN** is the goto dating and networking app for students of Heilbronn University (HHN).
 **Our goal:** Bringing students together across different study programs, whether for a date in the campus cafeteria or a shared late-night study session in the LIV library.
 
 This project is being developed as part of the **Cloud Computing Competition (CCC’26)** and demonstrates a highly scalable, 100% serverless microservices architecture.
 
-## ✨ Core Features (MVP Scope)
+## Core Features (MVP Scope)
 
 **For Students (Web Client)**
 * **Student Profiles:** Clean profile creation including a display name, a short bio, and multiple profile pictures.
 * **HHN Compatibility (The Local Edge):** Profiles include campus-specific icebreakers. Students select their ultimate Mensa Food (e.g., "Vegan Power Bowl" or "Currywurst Fanatic") and their favorite Campus Spot (e.g., LIV Library, Neckarbogen). Shared preferences are highlighted to make the first real-life meetup frictionless!
+* **Different Matching Modes**: Different matching modes, like Buddy, Coffee and Biz mode.
 * **The Swipe Engine:** The core discovery mechanic, swipe right to connect, swipe left to pass.
 * **Match Notifications:** Instant event-driven notification when a mutual "Right Swipe" occurs.
 
@@ -19,7 +20,7 @@ This project is being developed as part of the **Cloud Computing Competition (CC
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 Our architecture follows the "Serverless First" principle to guarantee massive scalability and reduce idle costs to almost €0.00.
 
@@ -82,7 +83,7 @@ graph TD
     end
 ```
 
-## 📂 Repository Structure & Modules
+## Repository Structure & Modules
 
 The CloudCrushHHN ecosystem is organized into three main repositories to ensure a clean separation of concerns. Please refer to their specific READMEs for detailed technical documentation and local setup instructions.
 
