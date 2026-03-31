@@ -3,7 +3,7 @@
 <p align="center">
   <img src="images/mockup.png" width="320" alt="Mockup">
   <br>
-  <em>A full mockup can be found <a href="https://stitch.withgoogle.com/projects/16163511515640605848">here</a></em>
+  <em>A full mockup can be found <a href="https://stitch.withgoogle.com/projects/16163511515640605848" target="_blank">here</a></em>
 </p>
 
 > **Never study alone. Find your focus, build your streak.**
