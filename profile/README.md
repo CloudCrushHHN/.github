@@ -22,23 +22,59 @@ Once you both swipe right on each other, it's a match! Using a time and place pr
 * **Gamified Streaks & Rankings:** A dynamic tracking system that rewards consistent study habits. Meeting up regularly builds your streak and promotes you through visual ranks (e.g., Silver, Gold, Diamond).
 * **Admin Dashboard:** A separate, restricted interface for platform administrators to manage users, review flagged profiles, and oversee the platform's general activity.
 
-## System Architecture
+### Architecture Diagram
 
-<p align="center">
-  <img src="images/architecture.jpg" width="900" alt="System Architecture Diagram">
-  <br>
-  <em>Figure 1: System Architecture Diagram</em>
-</p>
+```mermaid
+flowchart TD
+  subgraph Clients [Client Interfaces]
+    User[Student Web App]
+    Admin[Admin Dashboard]
+  end
 
-### Logical Flow
+  subgraph Edge [Edge & Security]
+    CDN[Amazon CloudFront]
+    S3Front[S3: Frontend Hosting]
+    Cognito[Amazon Cognito: IAM & Roles]
+  end
 
-Our application leverages a fully serverless architecture on AWS to ensure high availability, scalability, and real-time responsiveness:
+  subgraph API_Layer [API Routing]
+    APIGW[Amazon API Gateway REST]
+  end
 
-1. **Frontend Delivery & Authentication:** The client-side application (React) is hosted in an **Amazon S3 Bucket** and distributed globally via **Amazon CloudFront** (CDN) for fast loading. User authentication is managed securely by **AWS Cognito**, which issues JWT tokens to authorize subsequent API requests.
-2. **REST API (Swiping & Profiles):** Standard client requests (like updating a profile or swiping left/right) are routed through **Amazon API Gateway (REST API)**. These endpoints trigger specific **AWS Lambda** functions (e.g., `UpdateProfileLambda`, `ProcessSwipeLambda`) in the compute layer. A scheduled event via EventBridge also routinely triggers `GenerateMatchesLambda` to finalize matches based on swipe data.
-3. **Real-time WebSockets (Chat & Timers):** For real-time interactions, such as private post-match chats and study timers, the client establishes a persistent connection through **Amazon API Gateway (WebSocket API)**. Connection states and messages are handled by dedicated serverless functions (`WebSocketConnectLambda`, `SendMessageLambda`, etc.).
-4. **Data Storage & Single Table Design:** All application data (User Profiles, Swipe/Match records, Chat logs, and Streak data) is stored in a single **Amazon DynamoDB** table. The database uses a highly optimized Single Table Design with specific primary access patterns (e.g., `PROFILE#{UserID}`, `ROOM#{RoomID}`) for rapid querying.
-5. **Real-time Synchronization:** When a match occurs or a chat message is sent, the system uses the **AWS API Gateway Management API (PostToConnection)** to instantly push updates and notifications back to the connected clients.
+  subgraph Compute [Compute Layer]
+    LambdaAPI[AWS Lambda: Core API\nProfiles, Swipes, Proposals, QR]
+    Fargate[AWS Fargate Container: Worker\nMatch Engine & Gamification]
+  end
+
+  subgraph Async [Event Driven]
+    EB[Amazon EventBridge]
+  end
+
+  subgraph Data [Data Layer]
+    DDB[(Amazon DynamoDB\nSingle Table)]
+    S3Images[(S3: Profile Images)]
+  end
+
+  %% Connections
+  User -->|HTTPS| CDN
+  Admin -->|HTTPS| CDN
+  CDN --> S3Front
+  
+  User -->|Auth / JWT| Cognito
+  Admin -->|Auth / JWT| Cognito
+  
+  User -->|REST API| APIGW
+  Admin -->|REST API| APIGW
+
+  APIGW -->|Trigger| LambdaAPI
+  User -.->|Direct Upload via Presigned URL| S3Images
+
+  LambdaAPI -->|Read/Write| DDB
+  LambdaAPI -->|Emit Events| EB
+
+  EB -->|Trigger Event| Fargate
+  Fargate -->|Update Streaks & Matches| DDB
+```
 
 ## Project Structure & Modules
 
