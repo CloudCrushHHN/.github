@@ -4,6 +4,7 @@
 
 ## Architecture Diagram
 
+```mermaid
 graph TD
     %% User Interfaces & Access
     subgraph "Frontend & Identity"
