@@ -1,4 +1,4 @@
-# CloudCrushHHN - Goto Dating App for Heilbronn University 💘
+# CloudCrushHHN - Dating App for Heilbronn University 💘
 
 **CloudCrushHHN** is the goto dating and networking app for students of Heilbronn University (HHN).
 **Our goal:** Bringing students together across different study programs, whether for a date in the campus cafeteria or a shared late-night study session in the LIV library.
