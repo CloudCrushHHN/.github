@@ -1,47 +1,11 @@
 # Study2Gether
 
-...
+> **Never study alone. Find your focus, build your streak.**
 
-## Architecture Diagram
+Study2Gether is an app made for uni students who are tired of studying alone. We took that familiar left/right swiping mechanic you already know and applied it to finding the perfect study buddy.
 
-```mermaid
-graph TD
-    %% User Interfaces & Access
-    subgraph "Frontend & Identity"
-        CDN[AWS CloudFront + S3 SPA] -->|HTTPS| UI[Web Client: Student, Admin, Jury]
-        UI -->|Sign Up / Sign In| Auth[Amazon Cognito]
-    end
+Before you start swiping through profiles, you can set up exactly what kind of study vibe you're going for:
+1. **Subject-Specific Mode:** Type in exactly what you're working on (like "Cloud Computing" or "Calculus") to link up with someone studying the exact same thing so you can figure it out together.
+2. **Flex Mode:** Just pick "Nothing Specific" to match with someone doing totally different work. You just hang out (virtually or IRL) and keep each other accountable so nobody gets distracted by their phone.
 
-    %% Central API
-    subgraph "API Gateway"
-        UI -->|API Requests with JWT| API[Amazon API Gateway]
-        API -.->|Validates Token & Roles| Auth
-    end
-
-    %% Distributed Backend Microservices
-    subgraph "Distributed Microservices"
-        API -->|Role: Student, Admin| S_Team[Team & Proposal Lambda]
-        API -->|Role: Student| S_Sub[Submission Lambda]
-        API -->|Role: Admin, Jury| S_Grade[Jury Grading Lambda]
-    end
-
-    %% Data Layer
-    subgraph "Data & Object Layer"
-        S_Team <--> DB_Core[(DynamoDB: Teams, Proposals)]
-        S_Sub <--> S3_Files[(S3 Bucket: Diagrams, Presentations)]
-        S_Grade <--> DB_Core
-    end
-
-    %% Operations
-    subgraph "Observability & IaC"
-        Observability[AWS CloudWatch & X-Ray <br/> Monitoring, Logging, Tracing]
-        IaC[Provisioned via Terraform]
-    end
-
-    %% Connect Observability to relevant nodes
-    S_Team -.-> Observability
-    S_Sub -.-> Observability
-    S_Grade -.-> Observability
-    DB_Core -.-> Observability
-    S3_Files -.-> Observability
-```
+Once you both swipe right on each other, it's a match! In a private chat you can figure out when and where to study. To keep you motivated and actually hitting the books, we've got a built-in streak system. The more days a week you study, the higher your rank climbs (like hitting Silver, Gold, or Diamond).
