@@ -1,8 +1,24 @@
-# CloudCrushHHN - Dating for Heilbronn University 💘
+# CloudCrushHHN - Goto Dating App for Heilbronn University 💘
 
-**CloudCrushHHN** is the exclusive dating and networking app for students of Heilbronn University (HHN). Our goal: Bringing students together across different study programs, whether for a date in the campus cafeteria or a shared late-night study session in the LIV library.
+**CloudCrushHHN** is the goto dating and networking app for students of Heilbronn University (HHN). **Our goal:** Bringing students together across different study programs, whether for a date in the campus cafeteria or a shared late-night study session in the LIV library.
 
-This project was developed as part of the **Cloud Computing Competition (CCC’26)** and demonstrates a highly scalable, 100% serverless microservices architecture.
+This project is being developed as part of the **Cloud Computing Competition (CCC’26)** and demonstrates a highly scalable, 100% serverless microservices architecture.
+
+## ✨ Core Features (MVP Scope)
+
+To ensure a robust, secure, and well-architected cloud infrastructure within the competition timeframe, the application intentionally focuses on a streamlined Minimum Viable Product (MVP) feature set:
+
+**📱 For Students (Web Client)**
+* **Secure Onboarding:** Registration and Login powered by Amazon Cognito.
+* **Student Profiles:** Simple, clean profile creation including a display name, a short bio, and a single profile picture.
+* **The Swipe Engine:** The core discovery mechanic—swipe right to like, swipe left to pass.
+* **Match Notifications:** Instant event-driven notification when a mutual "Right Swipe" occurs.
+
+**🛡️ For Administrators (Web Admin)**
+* **Live Metrics:** Real-time tracking of total registered users, active swipes, and successful match counts.
+* **System Observability:** A secure dashboard to monitor platform usage and distributed system health.
+
+---
 
 ## 🏗️ Architecture & Tech Stack
 
@@ -64,7 +80,6 @@ graph TD
         CW[AWS CloudWatch & X-Ray] -.->|Monitors| ProfileService
         CW -.->|Monitors| MatchService
     end
-```
 
 ## 📂 Repository Structure & Modules
 
