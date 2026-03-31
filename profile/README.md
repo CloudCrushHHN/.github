@@ -18,7 +18,7 @@ Once you both swipe right on each other, it's a match! Using a time and place pr
 * **Dual Study Modes:** The ability to toggle between "Subject-Specific Mode" (finding someone studying the exact same topic) and "Flex Mode" (matching with anyone).
 * **Discovery & Swiping:** An intuitive, card-based feed where users can swipe left to pass or right to connect with potential study partners.
 * **Meetup Proposal System:** Matches coordinate using a streamlined scheduling tool. One user proposes a time and a campus location, and the other userer can accepts, declines, or proposes an alternative. Once accepted, the session is officially scheduled.
-* * **QR Code Meetup Verification:** To ensure sessions actually happen and streaks remain legit, the site generates a unique QR code when you meet up. Your buddy scans it to verify the session, track the time, and securely update your ranks.
+* **QR Code Meetup Verification:** To ensure sessions actually happen and streaks remain legit, the site generates a unique QR code when you meet up. Your buddy scans it to verify the session, track the time, and securely update your ranks.
 * **Gamified Streaks & Rankings:** A dynamic tracking system that rewards consistent study habits. Meeting up regularly builds your streak and promotes you through visual ranks (e.g., Silver, Gold, Diamond).
 * **Admin Dashboard:** A separate, restricted interface for platform administrators to manage users, review flagged profiles, and oversee the platform's general activity.
 
