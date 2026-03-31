@@ -1,5 +1,9 @@
 # Study2Gether
 
+![Mockup](images/mockup.png)
+
+A full mockup can be found [here](https://stitch.withgoogle.com/projects/16163511515640605848)
+
 > **Never study alone. Find your focus, build your streak.**
 
 Study2Gether is an app made for uni students who are tired of studying alone. We took that familiar left/right swiping mechanic you already know and applied it to finding the perfect study buddy.
